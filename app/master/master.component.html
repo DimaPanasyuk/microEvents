@@ -1,4 +1,49 @@
-<h2>Master</h2>
-<pre>
-  {{events | json}}
-</pre>
+<div class="search-for-event">
+  <div class="row">
+    <div class="col-md-12">
+      <input class="search-for-event__input"  
+             type="text" 
+             placeholder="eg. Beer, Cocktail, Coffee, Berlin, London"
+             [(ngModel)]="searchQuery">
+      <button class="search-for-event__button"
+              (click)="searchEvent()">
+        Find Event!
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="event__card">
+    <div class="event__card__info">
+      <div class="event__card__info-photo">
+      </div>
+      <div class="event__card__info-username">
+        <h5>Dima Panasyuk, 18</h5>
+      </div>
+      <div class="event__card__info-about">
+        <span class="event__card__info-about-distance">
+          <i class="fa fa-map-marker"></i>
+          1.25 km
+        </span>
+        <h3>
+          Beer together
+        </h3>
+        <span>
+          Let's have a drink together
+        </span>
+      </div>
+    </div>
+    <div class="event__card__actions">
+      <div class="col-xs-4 event__card__actions__action">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+      </div>
+      <div class="col-xs-4 event__card__actions__action">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+      </div>
+      <div class="col-xs-4 event__card__actions__action">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</div>

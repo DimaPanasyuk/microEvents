@@ -1,4 +1,113 @@
+.search-for-event {
+  padding: 30px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 1px lightgray;
+  margin-bottom: 20px;
+}
+.search-for-event__input {
+  width: 88%;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: inset 0 0 1px 1px lightgray;
+  border: 1px solid lightgray;
+}
+.search-for-event__button {
+  border: 1px solid #666666;
+  width: 10%;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  padding: 7px;
+  border-radius: 3px;
+  box-shadow: inset 0 0 1px 1px #737373;
+  background-color: #0285f6;
+}
+.event__card {
+  box-shadow: 0 0 8px 1px lightgray;
+}
+.event__card:hover {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px 3px lightgray;
+}
+.event__card__info {
+  padding: 20px;
+  background-image: url('http://ichef.bbci.co.uk/naturelibrary/images/ic/credit/640x395/m/mo/mountain/mountain_1.jpg');
+}
+.event__card__info-photo {
+  width: 55px;
+  height: 55px;
+  border: 2px solid white;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url('http://www.suave.com/Images/2072/2072-665335-Category%20Hero%20Images_Mens.png');
+}
+.event__card__info-username {
+  color: white;
+}
+.event__card__info-username:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.event__card__info-username h5 {
+  line-height: 50px;
+  letter-spacing: -1.4px;
+}
+.event__card__info-about {
+  margin-top: 15%;
+  padding: 0 10px;
+  color: white;
+}
+.event__card__info-about-distance {
+  letter-spacing: -1px;
+  font-size: 15px;
+}
+.event__card__actions:before,
+.event__card__actions:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.event__card__actions__action {
+  text-align: center;
+  margin: 20px 0;
+}
+.event__card__actions__action i {
+  color: #666666;
+}
+.event__card__actions__action i:hover {
+  cursor: pointer;
+  color: black;
+  transition: all 0.3s ease;
+}
+body {
+  background-color: #f2f2f2;
+}
 .header {
-  border: 1px solid black;
   padding: 10px;
+  font-family: 'Pacifico', cursive;
+  background-color: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 0 3px 1px lightgray;
+}
+.header__main:hover,
+.header__create:hover,
+.header__main:active,
+.header__create:active,
+.header__main:focus,
+.header__create:focus {
+  text-decoration: none;
+}
+.header__main {
+  float: left;
+}
+.header__create {
+  float: right;
+  padding: 4px 10px;
+  margin-top: 10px;
 }

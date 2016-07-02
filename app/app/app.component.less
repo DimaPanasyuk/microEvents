@@ -1,0 +1,30 @@
+body {
+  background-color: darken(white, 5%);
+}
+
+.header {
+  padding: 10px;
+  font-family: 'Pacifico', cursive;
+  background-color: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 0 3px 1px lightgray;
+}
+
+.header__main,
+.header__create {
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.header__main {
+  float: left;
+}
+
+.header__create {
+  float: right;
+  padding: 4px 10px;
+  margin-top: 10px;
+}

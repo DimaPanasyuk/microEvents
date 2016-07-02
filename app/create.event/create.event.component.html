@@ -1,4 +1,55 @@
-<h2>create</h2>
-<pre class="text-danger">
-  {{newEvent | json}}
-</pre>
+<div class="col-md-6">
+  <div class="form-group">
+    <input type="text"
+           placeholder="Event title"
+           [(ngModel)]="newEvent.title"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="text"
+           placeholder="Event description"
+           [(ngModel)]="newEvent.description"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="date"
+           placeholder="Choose event date"
+           [(ngModel)]="newEvent.eventDate"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="text"
+           placeholder="Enter event location"
+           [(ngModel)]="newEvent.address"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="text"
+           placeholder="Enter tags"
+           [(ngModel)]="tagName"
+           class="form-control">
+    <span class="label label-primary"
+          *ngFor="let tag of newEvent.tags">
+      {{tag}}
+      <span class="glyphicon glyphicon-remove"
+            (click)="removeTag(tag)">
+      </span>
+    </span>
+  </div>
+  <button class="btn btn-primary btn-block"
+          (click)="createEvent()"
+          [disabled]="!newEvent.title || !newEvent.picture">
+    Create Event
+  </button>
+</div>
+<div class="col-md-6">
+  <div class="form-group">
+    <input type="text"
+           placeholder="Enter event photo url"
+           [(ngModel)]="newEvent.picture"
+           class="form-control">
+    <img *ngIf="newEvent.picture.length"
+         [src]="newEvent.picture" 
+         [alt]="newEvent.title">
+  </div>
+</div>
