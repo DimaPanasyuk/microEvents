@@ -1,0 +1,21 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <a [routerLink] = "['']">
+          <h1>MicroEvents</h1>
+        </a>
+        <a [routerLink] = "['/create']">Create</a>
+      </div>
+    </div>
+  </div>
+</header>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>
