@@ -18,4 +18,8 @@ export class EventDetailsComponent implements OnInit {
       this.event = _.find(this._eventsService.getEvents(), {id: parseInt(params['id'], 10)});
     })
   }
+  
+  toggleLike(eventId: number): void {
+    this._eventsService.like(eventId);
+  }
 }

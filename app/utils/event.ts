@@ -11,9 +11,11 @@ export interface IEvent {
   tags: string[];
   creator?: IUser;
   picture: string;
+  liked: Boolean;
+  distance: number;
 }
 
-export class Event {
+export class Event implements IEvent {
   constructor(public id: number,
               public title: string,
               public description: string,
@@ -23,7 +25,9 @@ export class Event {
               public geoPosition: string,
               public tags: string[],
               public creator: IUser,
-              public picture: string) {
+              public picture: string,
+              public liked: Boolean,
+              public distance: number) {
 
   }
 }

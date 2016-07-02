@@ -21,11 +21,36 @@
   color: white;
   padding: 7px;
   border-radius: 3px;
-  box-shadow: inset 0 0 1px 1px #737373;
   background-color: #0285f6;
+}
+@media only screen and (max-width: 1200px) {
+  .search-for-event__input {
+    width: 78%;
+  }
+  .search-for-event__button {
+    width: 20%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .search-for-event__input {
+    width: 68%;
+  }
+  .search-for-event__button {
+    width: 29%;
+  }
+}
+@media only screen and (max-width: 490px) {
+  .search-for-event__input {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .search-for-event__button {
+    width: 100%;
+  }
 }
 .event__card {
   box-shadow: 0 0 8px 1px lightgray;
+  margin-bottom: 20px;
 }
 .event__card:hover {
   transition: all 0.3s ease;
@@ -33,7 +58,10 @@
 }
 .event__card__info {
   padding: 20px;
-  background-image: url('http://ichef.bbci.co.uk/naturelibrary/images/ic/credit/640x395/m/mo/mountain/mountain_1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
 }
 .event__card__info-photo {
   width: 55px;
@@ -44,7 +72,7 @@
   margin-right: 10px;
   background-position: center center;
   background-size: cover;
-  background-image: url('http://www.suave.com/Images/2072/2072-665335-Category%20Hero%20Images_Mens.png');
+  background-repeat: no-repeat;
 }
 .event__card__info-username {
   color: white;
@@ -87,6 +115,7 @@
 }
 body {
   background-color: #f2f2f2;
+  min-width: 320px;
 }
 .header {
   padding: 10px;
@@ -110,4 +139,69 @@ body {
   float: right;
   padding: 4px 10px;
   margin-top: 10px;
+}
+.event-details {
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 30px;
+}
+.event-details:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.event-details__photo {
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+.event-details__author {
+  margin-top: 20px;
+}
+.event-details__author__photo {
+  width: 90px;
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 3px 1px black;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
+.event-details__author__name h4 {
+  line-height: 40px;
+  margin-bottom: 0;
+}
+.event-details__author__message {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  min-height: 90px;
+}
+.event-details__card__actions {
+  margin-top: 10px;
+}
+.event-details__card__actions__action {
+  text-align: center;
+  margin: 20px 0;
+  margin: 0;
+}
+.event-details__card__actions__action i {
+  color: #666666;
+}
+.event-details__card__actions__action i:hover {
+  cursor: pointer;
+  color: black;
+  transition: all 0.3s ease;
+}
+.new-event__photo-preview {
+  margin-top: 20px;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

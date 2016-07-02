@@ -10,6 +10,7 @@ import { UsersService } from '../services/users.service';
   templateUrl: 'app/create.event/create.event.component.html'
 })
 export class CreateEventComponent implements OnInit {
+  tagName: string;
   newEvent: IEvent = {
     id: this.randomise(9999),
     title: '',
@@ -19,7 +20,9 @@ export class CreateEventComponent implements OnInit {
     address: '',
     geoPosition: '',
     tags: [],
-    picture: ''
+    picture: '',
+    liked: false,
+    distance: this.randomise(800)
   };
   constructor(private _usersService: UsersService, 
               private _eventsService: EventsService,
@@ -33,6 +36,17 @@ export class CreateEventComponent implements OnInit {
   createEvent(): void {
     this._eventsService.createEvent(this.newEvent);
     this._router.navigate(['']);
+  }
+  
+  addTag(event: any): void {
+    if (event.keyCode === 13) {      
+      this.newEvent.tags.push(this.tagName);
+      this.tagName = '';
+    }
+  }
+  
+  removeTag(index: number): void {
+    this.newEvent.tags.splice(index, 1);
   }
   
   randomise(index: number): number {

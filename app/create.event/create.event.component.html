@@ -27,20 +27,16 @@
     <input type="text"
            placeholder="Enter tags"
            [(ngModel)]="tagName"
+           (keydown)="addTag($event)"
            class="form-control">
-    <span class="label label-primary"
-          *ngFor="let tag of newEvent.tags">
+    <span class="label label-pill label-success"
+          *ngFor="let tag of newEvent.tags let i = index">
       {{tag}}
-      <span class="glyphicon glyphicon-remove"
-            (click)="removeTag(tag)">
+      <span class="fa fa-times"
+            (click)="removeTag(i)">
       </span>
     </span>
   </div>
-  <button class="btn btn-primary btn-block"
-          (click)="createEvent()"
-          [disabled]="!newEvent.title || !newEvent.picture">
-    Create Event
-  </button>
 </div>
 <div class="col-md-6">
   <div class="form-group">
@@ -48,8 +44,16 @@
            placeholder="Enter event photo url"
            [(ngModel)]="newEvent.picture"
            class="form-control">
-    <img *ngIf="newEvent.picture.length"
-         [src]="newEvent.picture" 
-         [alt]="newEvent.title">
+    <div class="new-event__photo-preview"
+         *ngIf="newEvent.picture.length"
+         [ngStyle]="{'background-image': 'url(' + newEvent.picture + ')'}">
+    </div>       
   </div>
+</div>
+<div class="col-sm-12">
+  <button class="btn btn-primary btn-block"
+          (click)="createEvent()"
+          [disabled]="!newEvent.title || !newEvent.picture">
+    Create Event
+  </button>
 </div>

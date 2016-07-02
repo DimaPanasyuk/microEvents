@@ -13,36 +13,47 @@
   </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4"
+     *ngFor="let event of events">
   <div class="event__card">
-    <div class="event__card__info">
-      <div class="event__card__info-photo">
+    <div class="event__card__info"
+         (click)="getDetails(event)"
+         [ngStyle]="{'background-image': 'url(' + event.picture + ')'}">
+      <div class="event__card__info-photo"
+           [ngStyle]="{'background-image': 'url(' + event.creator.photo + ')'}">
       </div>
       <div class="event__card__info-username">
-        <h5>Dima Panasyuk, 18</h5>
+        <h5>{{event.creator.name}} {{event.creator.surname}}, 
+            {{event.creator.age}}
+        </h5>
       </div>
       <div class="event__card__info-about">
         <span class="event__card__info-about-distance">
           <i class="fa fa-map-marker"></i>
-          1.25 km
+          {{event.distance}} km
         </span>
         <h3>
-          Beer together
+          {{event.title}}
         </h3>
         <span>
-          Let's have a drink together
+          {{event.description}}
         </span>
       </div>
     </div>
     <div class="event__card__actions">
       <div class="col-xs-4 event__card__actions__action">
-        <i class="fa fa-heart" aria-hidden="true"></i>
+        <i class="fa fa-heart"
+           (click)="toggleLike(event.id)"
+           [ngClass]="{'text-danger': event.liked}" 
+           aria-hidden="true"></i>
       </div>
       <div class="col-xs-4 event__card__actions__action">
-        <i class="fa fa-comments" aria-hidden="true"></i>
+        <i class="fa fa-comments" 
+           aria-hidden="true"></i>
       </div>
       <div class="col-xs-4 event__card__actions__action">
-        <i class="fa fa-share-alt" aria-hidden="true"></i>
+        <i class="fa fa-share-alt" 
+           aria-hidden="true"></i>
       </div>
     </div>
   </div>

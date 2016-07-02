@@ -1,4 +1,56 @@
-<h2>Details</h2>
-<pre>
-  {{event | json}}
-</pre>
+<div class="event-details">
+  <div class="event-details__header">
+    <div class="row">
+      <div class="col-xs-6">
+        <h3>
+          {{event.title}}
+        </h3>
+      </div>
+      <div class="col-xs-6">
+        <div class="event-details__card__actions pull-xs-right">
+          <div class="col-xs-4 event-details__card__actions__action">
+            <i class="fa fa-heart"
+              (click)="toggleLike(event.id)"
+              [ngClass]="{'text-danger': event.liked}" 
+              aria-hidden="true"></i>
+          </div>
+          <div class="col-xs-4 event-details__card__actions__action">
+            <i class="fa fa-comments" 
+              aria-hidden="true"></i>
+          </div>
+          <div class="col-xs-4 event-details__card__actions__action">
+            <i class="fa fa-share-alt" 
+              aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="event-details__photo"
+       [ngStyle]="{'background-image': 'url(' + event.picture + ')'}">
+  </div>
+  <div class="event-details__author">
+    <div class="col-xs-4">
+      <div class="event-details__author__photo"
+          [ngStyle]="{'background-image': 'url(' + event.creator.photo + ')'}">
+        
+      </div>
+      <div class="event-details__author__name">
+        <h4>
+          {{event.creator.name}} {{event.creator.surname}}, {{event.creator.age}}
+        </h4>
+        <span>
+          <i class="fa fa-map-marker"></i>
+          {{event.distance}} km
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-8">
+      <div class="event-details__author__message">
+        <span>
+          {{event.description}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
