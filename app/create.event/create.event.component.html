@@ -29,10 +29,10 @@
            [(ngModel)]="tagName"
            (keydown)="addTag($event)"
            class="form-control">
-    <span class="label label-pill label-success"
+    <span class="label label-primary event__tags"
           *ngFor="let tag of newEvent.tags let i = index">
       {{tag}}
-      <span class="fa fa-times"
+      <span class="fa fa-times event__tags__remove-button"
             (click)="removeTag(i)">
       </span>
     </span>
